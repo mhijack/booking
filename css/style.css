@@ -26,7 +26,9 @@ Grey dark 3: #999
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
+  --line: var(--color-grey-light-2) 1px solid; }
 
 * {
   margin: 0;
@@ -61,7 +63,7 @@ body {
 .header {
   height: 7rem;
   background-color: #fff;
-  border-bottom: var(--color-grey-light-1) 1px solid;
+  border-bottom: var(--line);
   font-size: 1.4rem;
   display: flex;
   justify-content: space-between;
@@ -79,8 +81,7 @@ body {
 
 .overview {
   flex: 1;
-  background-color: #fff;
-  height: 80rem; }
+  background-color: #fff; }
 
 .logo {
   height: 3.25rem;
@@ -216,7 +217,7 @@ body {
 .hotel {
   display: flex;
   align-items: center;
-  border-bottom: var(--color-grey-light-1) 2px solid; }
+  border-bottom: var(--line); }
   .hotel__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -273,3 +274,63 @@ body {
   100% {
     transform: scale(1);
     box-shadow: none; } }
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line); }
+
+.description {
+  flex: 0 0 60%;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  margin-right: 4.5rem;
+  padding: 3rem;
+  font-size: 1.4rem; }
+
+.user-reviews {
+  background-color: green;
+  flex: 1; }
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line); }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem; }
+  .list__item:before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover; }
+
+.recommend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3); }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid #fff; }
+  .recommend__photo:not(:last-of-type) {
+    margin-right: -1.5rem; }
+  .recommend__count {
+    margin-right: auto;
+    background-color: red; }
